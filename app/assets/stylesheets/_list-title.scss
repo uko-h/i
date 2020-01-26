@@ -1,0 +1,17 @@
+@mixin list-title() {
+  position: absolute;
+  display: inline-block;
+  top: -30px;
+  left: 15px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 40px;
+  background: rgb(243, 196, 222);
+  font-weight: bold;
+  font-family: Comic Sans MS;
+}
+
+p {
+  margin: 0; 
+  padding: 0;
+}
