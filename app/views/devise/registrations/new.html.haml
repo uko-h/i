@@ -1,0 +1,32 @@
+.background
+  .user
+    .sign-up
+      %h5 はじめまして！
+      %h6 すでにアカウントをお持ちの方はこちらから
+      = render "devise/shared/links"
+    .account-form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .field
+          .field-label
+            = f.label :nickname
+          .field-input
+            = f.text_field :nickname, autofocus: true
+        .field
+          .field-label
+            = f.label :email
+          .field-input
+            = f.email_field :email
+        .field
+          .field-label
+            = f.label :password
+            %i (英数字8文字以上)
+          .field-input
+            = f.password_field :password, autocomplete: "off"
+        .field
+          .field-label
+            = f.label :password_confirmation
+          .field-input
+            = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "Create", class: 'btn'

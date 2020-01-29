@@ -1,0 +1,20 @@
+.background
+  .user
+    .log-in
+      %h3 ようこそ！
+      = render "devise/shared/links"
+    .account-form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          .field-label
+            = f.label :email
+          .field-input
+            = f.email_field :email, autofocus: true
+          .field
+            .field-label
+              = f.label :password
+              %i (英数字8文字以上)
+            .field-input
+              = f.password_field :password, autocomplete: "off"
+          .actions
+            = f.submit "log in", class: 'btn'

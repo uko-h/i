@@ -1,0 +1,7 @@
+- if controller_name != 'sessions'
+  = link_to "Log in", new_session_path(resource_name), class: 'btn'
+  %br/
+- if devise_mapping.registerable? && controller_name != 'registrations'
+  %h4 新規登録はこちらから
+  = link_to "sign up",  new_registration_path(resource_name), class: 'btn'
+  %br/
