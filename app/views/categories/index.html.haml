@@ -1,20 +1,29 @@
-.upper
-  .favorite
-    %span.favorite__box my favorites
-    %p 自分の好きなもの、好きなこと、好きな人でいっぱいにしよう
-.middle
-  .happy
-    %span.happy__box happy
-    %p 楽しかったこと、嬉しかったことでいっぱいにしよう
-  .message
-    %h2 自分に"いいね"を送ろう!!
-  .good-job
-    %span.good-job__box good job!
-    %p 自分の頑張りを認めよう
-.lower
-  .nice
-    %span.nice__box nice!!
-    %p 自分以外の誰かにも"いいね"を送ろう
-  .dust-box
-    = link_to "#", class: "dust-box__icon" do
-      %i.fas.fa-trash.fa-7x
+.background
+  .margin-top
+  .upper
+    .user-edit
+      .user-edit__icon
+        = link_to edit_user_path(current_user), class: "user-edit__icon--btn" do
+          %i.fas.fa-user-edit
+            .user-name
+              = current_user.nickname
+    .favorite
+      my favorites
+      -# %span.favorite__box my favorites
+      -# %p 自分の好きなもの、好きなこと、好きな人でいっぱいにしよう
+    .good-job
+      good job!
+      -# %span.happy__box 
+      -# %p 楽しかったこと、嬉しかったことでいっぱいにしよう
+    -# .message
+    -#   自分に"いいね"を送ろう!!
+    .happy
+      happy
+      -# %span.good-job__box good job!
+      -# %p 自分の頑張りを認めよう
+    .nice
+      nice!
+      -# %p 自分以外の誰かにも"いいね"を送ろう
+    .dust-box
+      = link_to "#", class: "dust-box__icon" do
+        %i.fas.fa-trash.fa-7x
