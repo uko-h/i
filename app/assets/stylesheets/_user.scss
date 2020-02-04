@@ -129,10 +129,20 @@ h4 {
 
 input[type='submit'] {
   float: right;
-  margin: 30px 30px 0px;
-
   color: #fff;
   background-color: #00BCD4;
+}
+
+input[value="update"]{
+  margin: 30px 30px 0px;
+}
+
+input[value="log in"]{
+  margin: 30px 30px 0px;
+}
+
+input[value="create"]{
+  margin: 30px 30px 0px;
 }
 
 .edit {
@@ -150,7 +160,7 @@ input[type='submit'] {
 }
 
 .edit-form {
-  padding-right: 30px;
+  padding-right: 50px;
 }
 
 .bottom {

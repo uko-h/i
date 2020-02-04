@@ -1,28 +1,18 @@
 .background
   .header
     .header__title
-      %h1 my favorites
+      %h1= @category.name
   .main
     .posts
-      .post
-        .post__create
-          2019/1/23
-        .post__content
-          楽しいことしよう
-      .post
-        .post__create
-          2019/1/24
-        .post__content
-          good job!!
+      = render @posts
     .return
-    = link_to "#", class: "return__icon" do
-      TOP
+      = link_to "TOP", root_path, class: 'btn'
   .form
-    = form_for "#" do |f|
+    = form_for [@category, @post] do |f|
       .form__content
         =f.text_field :content, class: 'form__content__box', placeholder: ''
         .form__image
           =f.label :image, class: 'form__image__file' do
             =icon('far', 'image', class: 'icon')
             =f.file_field :image, class: 'hidden'
-        =f.submit 'POST', class: 'form__submit-btn'
+        =f.submit 'post', class: 'form__submit-btn'

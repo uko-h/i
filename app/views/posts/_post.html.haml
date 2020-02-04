@@ -1,0 +1,8 @@
+.post
+  .post__create
+    = post.created_at.strftime("%Y年%m月%d日")
+  .post__content
+    - if post.content.present?
+      %p.post__content--text
+        = post.content
+    = image_tag post.image.url, class: 'post__content--image' if post.image.present?

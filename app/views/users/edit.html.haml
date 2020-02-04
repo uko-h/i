@@ -15,9 +15,9 @@
           .field-input
             = f.email_field :email
         .actions
-          = f.submit "Update", class: 'btn'
+          = f.submit "update", class: 'btn'
   .bottom
     %h8 ログアウトはこちらから 
     = link_to "log out", destroy_user_session_path, method: :delete, class: 'btn'
     %h9 トップページに戻ります
-    = link_to "TOP", :back, class: 'btn'
+    = link_to "TOP", root_path, class: 'btn'
