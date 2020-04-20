@@ -6,4 +6,4 @@
       %p.post__content--text
         = post.content
     = image_tag post.image.url, class: 'post__content--image' if post.image.present?
-    = link_to "編集", edit_user_category_post_path(current_user.id,@category.id,post), method: :get, class:'post_edit' 
+    = link_to "編集", edit_user_category_post_path(current_user.id,@category.id,post), class:'post_edit' 

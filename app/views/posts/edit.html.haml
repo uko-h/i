@@ -4,21 +4,18 @@
       %h1#edit-title
         投稿の編集
   .main
-    -# .post-edit
-    -#   = form_for(@post, url: edit_user_category_post_path(user_id:current_user.id,category_id:@category,id:params[:id])) do |f|
-    -#     .post-edit__form
-    -#       %label
-    -#         %p 投稿内容
-    -#         = f.text_field :content, class: "", placeholder: @post.content
+    .post-edit
+    = form_for(@post_info, url: user_category_post_path(current_user.id,@category)) do |f|
+      .post-edit__form-image
+        %label
+          %p 画像の変更
+          = f.file_field :image, class: 'hidden'
+          =icon('far', 'image', class: 'icon')
+      .post-edit__form-content
+        %label
+          %p 投稿内容
+          = f.text_field :content, class: "", placeholder: @post_info.content
+      =f.submit '変更する', class: 'post-edit__btn'
      
     .return
       = link_to "TOP", root_path, class: 'btn'
-  -# .form
-  -#   = form_for(@new_post, url: user_category_posts_path(current_user.id,@category)) do |f|
-  -#     .form__content
-  -#       =f.text_field :content, class: 'form__content__box', placeholder: ''
-  -#       .form__image
-  -#         =f.label :image, class: 'form__image__file' do
-  -#           =icon('far', 'image', class: 'icon')
-  -#           =f.file_field :image, class: 'hidden'
-  -#       =f.submit 'post', class: 'form__submit-btn'

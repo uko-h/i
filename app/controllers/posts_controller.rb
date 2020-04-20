@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_category
   # before_action :set_post, except: [:index, :create]
-  before_action :set_post_info
+  before_action :set_post_info,only: [:edit, :update]
 
   def index
     @new_post = @category.posts.new
     @posts = Post.where(user_id:current_user.id,category_id:@category)
-    Post.where(user_id:current_user.id,category_id:@category).ids.each do |post|
+    @posts.ids.each do |post|
     end
   end
 
@@ -23,8 +23,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find_by(user_id:current_user.id,category_id:@category,id:params[:id])
-    if @post.update(post_params)
+    @post_info = Post.find_by(id: params[:id]) 
+    if @post_info.update(post_params)
       redirect_to user_category_posts_path(user_id:current_user.id,category_id:@category)
     else
       render :index
