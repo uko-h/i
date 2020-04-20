@@ -6,8 +6,10 @@
         .user-name
           = "#{current_user.nickname} さん"
   .categories-index
-    = link_to "/categories/10/posts", class: "dust-box__icon" do
-      %i.fas.fa-trash.fa-7x
-    - current_user.categories.each do |category|
-      = link_to category_posts_path(category) do
+    - Category.all.first(4).each do |category|
+      = link_to user_category_posts_path(current_user.id, category.id), id: "category--#{category.id}"do
         = category.name
+    - Category.all.last(1).each do |category|
+      = link_to user_category_posts_path(current_user.id, category.id), id: "category--#{category.id}"do
+        %i.fas.fa-trash.fa-7x
+  

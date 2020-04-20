@@ -8,7 +8,7 @@
     .return
       = link_to "TOP", root_path, class: 'btn'
   .form
-    = form_for [@category, @post] do |f|
+    = form_for(@new_post, url: user_category_posts_path(current_user.id,@category)) do |f|
       .form__content
         =f.text_field :content, class: 'form__content__box', placeholder: ''
         .form__image
