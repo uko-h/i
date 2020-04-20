@@ -3,8 +3,14 @@
     .header__title
       %h1= @category.name
   .main
-    .posts
-      = render @posts
+    - if @category.id < 10 
+      .posts
+        = render @posts
+    - else
+      .posts 
+        = render @posts
+        = link_to "水に流す", destroy_all_user_category_posts_path(current_user.id,@category.id,@posts),method: :delete, class:'delete_all'
+
     .return
       = link_to "TOP", root_path, class: 'btn'
   .form

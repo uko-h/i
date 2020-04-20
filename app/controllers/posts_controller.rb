@@ -40,6 +40,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy_all
+    @posts = Post.where(user_id:current_user.id,category_id:@category)
+    @posts.destroy_all
+    redirect_to user_category_posts_path(user_id:current_user.id,category_id:@category)
+  end
+
   private
 
   def post_params
@@ -49,11 +55,6 @@ class PostsController < ApplicationController
   def set_category
     @category = Category.find(params[:category_id])
   end
-
-  # def set_post
-  #   @post = Post.find(params[:id])
-  #   # binding.pry
-  # end
 
   def set_post_info
     @post_info = Post.find_by(id: params[:id])
