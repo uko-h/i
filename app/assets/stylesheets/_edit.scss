@@ -1,3 +1,105 @@
 #edit-title {
   font-family: arial unicode ms;
 }
+
+.post-edit {
+  display: flex;
+  justify-content: space-between;
+
+  &__wrapper {
+    margin: 0 auto;
+    
+  }
+  &__form-image {
+    margin: 85px 0 30px;
+    background: #00BCD4;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 1%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #00BCD4;
+    border: dashed 2px #FFF;
+    transition: .4s;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Comic Sans MS;
+    font-size: 30px;
+    #edit-image {
+      cursor: pointer;
+      color: #FFF;
+    }
+    #post_image {
+      cursor: pointer;
+    }
+  }
+  &__form-content {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Comic Sans MS;
+
+    #post_content {
+      width: 550px;
+      height: 200px;
+    }
+  }
+  &__btn {
+    margin: 20px 0 10px;
+    background: #00BCD4;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    border-radius: 5%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #00BCD4;
+    border: dashed 2px #FFF;
+    transition: .4s;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    padding: 0 7px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .post_delete {
+    margin: 20px 0 10px;
+    background: #00BCD4;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    border-radius: 5%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #00BCD4;
+    border: dashed 2px #FFF;
+    transition: .4s;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    padding: 0 7px;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 30px;
+    right: 75px;
+  
+    
+  }
+
+  &__form-image:hover,
+  &__btn:hover {
+    background: #668ad8;
+    box-shadow: 0px 0px 0px 5px #668ad8;
+  }
+
+  .post_delete:hover {
+    background: #d86682;
+    box-shadow: 0px 0px 0px 5px #d86682;
+  }
+}
