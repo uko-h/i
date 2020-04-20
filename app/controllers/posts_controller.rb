@@ -6,8 +6,8 @@ class PostsController < ApplicationController
   def index
     @new_post = @category.posts.new
     @posts = Post.where(user_id:current_user.id,category_id:@category)
-    @post = @posts.find_by(params[:id])
-
+    Post.where(user_id:current_user.id,category_id:@category).ids.each do |post|
+    end
   end
 
   def create
