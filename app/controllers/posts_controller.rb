@@ -32,6 +32,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post_info = Post.find_by(id: params[:id]) 
+    if @post_info.destroy
+      redirect_to user_category_posts_path(user_id:current_user.id,category_id:@category)
+    else
+      redirect_to edit_product_path(@product.id)
+    end
   end
 
   private

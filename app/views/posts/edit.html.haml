@@ -16,6 +16,6 @@
           %p 投稿内容
           = f.text_field :content, class: "", placeholder: @post_info.content
       =f.submit '変更する', class: 'post-edit__btn'
-     
+      = link_to "削除", user_category_post_path(@post_info),method: :delete, class:'post_delete'
     .return
       = link_to "TOP", root_path, class: 'btn'
