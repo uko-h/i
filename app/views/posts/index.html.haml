@@ -9,8 +9,8 @@
     - else
       .posts 
         = render @posts
-        %label
-          = link_to icon('fas', 'toilet'), destroy_all_user_category_posts_path(current_user.id,@category.id,@posts),method: :delete, class:'post__delete_all'
+      %label
+        = link_to icon('fas', 'toilet', class: 'delete'), destroy_all_user_category_posts_path(current_user.id,@category.id,@posts),method: :delete, class:'post__delete_all'
 
     .return
       = link_to "TOP", root_path, class: 'btn'
