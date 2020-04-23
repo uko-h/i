@@ -66,6 +66,7 @@
       text-decoration: none;
     }
   }
+  
   .post_delete {
     margin: 20px 0 10px;
     background: #00BCD4;
@@ -87,9 +88,7 @@
     text-decoration: none;
     position: absolute;
     bottom: 30px;
-    right: 75px;
-  
-    
+    right: 65px;
   }
 
   &__form-image:hover,
@@ -101,5 +100,35 @@
   .post_delete:hover {
     background: #d86682;
     box-shadow: 0px 0px 0px 5px #d86682;
+  }
+
+  .return_page {
+    background-color: red;
+    margin: 20px 0 10px;
+    background: #00BCD4;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    border-radius: 5%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #00BCD4;
+    border: dashed 2px #FFF;
+    transition: .4s;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    padding: 0 7px;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    right: 65px;
+    top: 270px;
+  }
+
+  .return_page:hover {
+    background: #668ad8;
+    box-shadow: 0px 0px 0px 5px #668ad8;
   }
 }
