@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_category
-  # before_action :set_post, except: [:index, :create]
   before_action :set_post_info,only: [:edit, :update]
 
   def index
@@ -13,7 +12,10 @@ class PostsController < ApplicationController
   def create
     @new_post = @category.posts.new(post_params)
     if @new_post.save
-      redirect_to user_category_posts_path(user_id:current_user.id,category_id:@category)
+      respond_to do |format|
+        format.html {redirect_to user_category_posts_path(user_id:current_user.id,category_id:@category)}
+        format.json
+      end
     else
       render :index
     end
