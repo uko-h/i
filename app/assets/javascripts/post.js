@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(post) {
-    image = (post.image) ? `<img class="post__content--image" src="${post.image}" >` : ""; //三項演算子を使ってmessage.imageにtrueならHTML要素、faiseなら空の値を代入。
+    image = (post.image) ? `<img class="post__content--image" src="${post.image}" >` : "";
     if (post.category === 10) {
       var html = `
       <div class="post" data-id="${post.id}">
