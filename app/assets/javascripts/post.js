@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(post) {
     image = (post.image) ? `<img class="post__content--image" src="${post.image}" >` : "";
-    if (post.category === 5) {
+    if (post.category === 5 || post.category === 41) {
       var html = `
       <div class="post" data-id="${post.id}">
         <div class="post__wrapper">
