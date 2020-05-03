@@ -27,9 +27,7 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false, unique: true|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :posts
-- belongs_to :user
