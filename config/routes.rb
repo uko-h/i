@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :users, except: [:edit, :update] do
     resources :categories, only: [:index] do
-      resources :posts, only: [:index, :create, :edit, :update, :destroy]
+      resources :posts, only: [:create],defaults: { format: 'json'} 
+      resources :posts, only: [:index, :edit, :update, :destroy] do
+        collection do
+          delete 'destroy_all'
+        end
+      end
     end
   end
 end
+
