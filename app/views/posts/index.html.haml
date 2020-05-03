@@ -3,7 +3,7 @@
     .header__title
       %h1= @category.name
   .main
-    - if @category.id < 10 
+    - if @category.id < 5 
       .posts
         = render @posts
     - else
