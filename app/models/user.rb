@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
-  has_many :user_categories
-  has_many :categories, through: :user_categories
+  has_many :categories
 
   devise :validatable, password_length: 7..128
   devise :validatable, email_regexp: /\A\S[a-z\d]+@\S[a-z\d]+\.\S+\z/

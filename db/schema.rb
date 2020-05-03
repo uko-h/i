@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 20200202081040) do
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
-  create_table "user_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "category_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_user_categories_on_category_id", using: :btree
-    t.index ["user_id"], name: "index_user_categories_on_user_id", using: :btree
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                            null: false
     t.string   "email",                  default: "", null: false
@@ -51,6 +42,4 @@ ActiveRecord::Schema.define(version: 20200202081040) do
 
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
-  add_foreign_key "user_categories", "categories"
-  add_foreign_key "user_categories", "users"
 end
