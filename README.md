@@ -1,33 +1,56 @@
-# README
+# i
+## アプリケーションURL
+https://i-myfavorite-blog.herokuapp.com
 
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|nickname|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
+- 「i (アイ)」という名前のアプリを作成しました。
+- 自分を表す一人称の「I」と愛情、LOVEを表す「愛」という2つの意味を込めた名前です。
+- このアプリでは、自分の好きなものや楽しかったことなどを投稿することで、それらで埋め尽くされた自分だけの世界を作ることができます。
+- アプリを開くたび、投稿するたびに笑顔が溢れ、どんどん自分のことが好きになり、自己肯定感および主観的幸福感を高めることが期待できます。
 
-### Association
-- has_many :posts
-- has_many :categories
+![UNADJUSTEDNONRAW_thumb_7ef](https://user-images.githubusercontent.com/57854896/80960117-30267080-8e43-11ea-8d41-d7838b3e6fd4.jpg)
 
-## postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|content|text|
-|image|string|
-|user_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
+# 背景
 
-### Association
-- belongs_to :user
-- belongs_to :category
+SNSで容易に人と人が繋がることができる昨今、その利便性の反面、繋がることによるストレスやトラブルなどが懸念されています。  
+そのため、あえて誰からも干渉されない自分だけの、自分のためだけの世界を作りたくブログという形でアプリを作成しました。  
+自分の好きな事象だけを投稿するため、いつ見てもキラキラし心が踊るよう感覚、そしてその時のユーザー自身の顔は良い笑顔だと思います。  
+その笑顔を生み出したくこのアプリを作成しました。
 
+# 使い方
 
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
+こちらはログイン後のトップ画面です。
+![XvSw%R24S7OlGVEw0k%s1A_thumb_7f0](https://user-images.githubusercontent.com/57854896/80965897-530a5200-8e4e-11ea-9f8f-935a75f589cc.jpg)
 
-### Association
-- has_many :posts
+- カテゴリー
+  - my favorites：自分の好きなもの、好きなこと、好きな人などについて投稿する。
+  - happy：嬉しかったこと、楽しかったことなどを投稿する。
+  - good job!：自分の頑張ったことや上手くいったこと、褒めたいところなどを投稿する。(自分に対する"いいね"ポイント)
+  - nice!：自分以外の誰かの良かったところ、褒めたいところなどを投稿する。(他者に対する"いいね"ポイント)
+  - negative feelings：右下のゴミ箱。自分の中のモヤモヤした感情や愚痴をひたすら投稿する。
+
+# 工夫したところとセールスポイント
+- 一般的なSNSなどと違い、自分以外がそのブログを見ることはできません。
+- もちろん、コメントや「いいね」をつけることもできません。
+- 気分が明るくなるよう、全体的な配色をやわらかい明るめの色にしました。
+- 自分の良いところやネガティブな感情はもちろん、他者の良いところも客観視することで自己肯定感を高めることにつながります。
+- negative feelings(カテゴリー右下のゴミ箱)は、モヤモヤした感情や愚痴を言葉を選ぶことなく(自分しか見れない為)思ったまま吐き出すためのもので、吐き出した後は右下のトイレマークから綺麗さっぱり水に流すことができます。(投稿の一括消去)
+
+![negative_feelings](https://gyazo.com/4a1c7d6370fc3b131b39ba3bdd759bf4/raw)
+
+# 実装した機能
+
+- ユーザー新規登録機能
+  - ニックネームとメールアドレス、パスワードを登録することでその人専用のブログページを作成します。
+- ログイン機能
+  - ニックネームとパスワードと入力すると専用ページに入ることができます。
+  - ログインした本人以外はそのページを見ることができません。
+- ブログ投稿と編集、削除機能
+  - 文章と画像の投稿ができます。
+  - negative feelings(右下のゴミ箱)以外のページでは、投稿ごとの編集と削除をすることができます。
+- 投稿の一括削除機能
+  - negative feelings(右下のゴミ箱)のページのみに実装しています。
+  - 投稿された文章や画像をボタン一つで全消去する機能です。
+
+# 今後の課題、発展させたいこと
+- ログイン後の各カテゴリー("my favorites"や"happy"など)に対し、マウスオーバーした際にjQueryを用いて説明を出したいです。
+- スマホやタブレット端末でも使用できるようにレスポンシブ対応させたいと思います。
