@@ -1,6 +1,4 @@
 # i
-## アプリケーションURL
-https://i-myfavorite-blog.herokuapp.com
 
 - 「i (アイ)」という名前のアプリを作成しました。
 - 自分を表す一人称の「I」と愛情、LOVEを表す「愛」という2つの意味を込めた名前です。
@@ -8,6 +6,9 @@ https://i-myfavorite-blog.herokuapp.com
 - アプリを開くたび、投稿するたびに笑顔が溢れ、どんどん自分のことが好きになり、自己肯定感および主観的幸福感を高めることが期待できます。
 
 ![UNADJUSTEDNONRAW_thumb_7ef](https://user-images.githubusercontent.com/57854896/80960117-30267080-8e43-11ea-8d41-d7838b3e6fd4.jpg)
+
+# アプリケーションURL
+https://i-myfavorite-blog.herokuapp.com
 
 # 背景
 
